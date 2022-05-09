@@ -69,14 +69,32 @@ void Morse::text2Morse(string text, string &morse) {
 		if (desc_copy[i] == ' '){
 			morse.append("   ");
 		}
-		if (isalpha(desc_copy[i])) {
+		else if (isalpha(desc_copy[i])) {
 			morse.append(alphabet[desc_copy[i] - 97] + ' ');
 		}
 		else if (isdigit(desc_copy[i])) {
 			morse.append(digit[desc_copy[i] - 48] + ' ');
 		}
+		else if (desc_copy[i] == '/') {
+			morse.append(slash + ' ');
+		}
+		else if (desc_copy[i] == '?') {
+			morse.append(question + ' ');
+		}
+		else if (desc_copy[i] == ',') {
+			morse.append(comma + ' ');
+		}
+		else if (desc_copy[i] == '.') {
+			morse.append(period + ' ');
+		}
+		else if (desc_copy[i] == '+') {
+			morse.append(plus + ' ');
+		}
+		else if (desc_copy[i] == '=') {
+			morse.append(equal + ' ');
+		}
 		else {
-
+			cout << "지원하지 않는 문자입니다." << endl;
 		}
 	}
 }
